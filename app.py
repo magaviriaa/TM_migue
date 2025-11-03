@@ -13,7 +13,7 @@ Convierte tu cámara en una herramienta inspirada en las eras de Taylor.
 El sistema reconocerá tus poses y gestos al estilo *Fearless* o *Red* 💃
 """)
 
-image = Image.open("OIG5.jpg")
+image = Image.open("OIG5.JPG")
 st.image(image, width=350, caption="Pose Like Taylor ✨")
 
 with st.sidebar:
