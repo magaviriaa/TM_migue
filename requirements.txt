@@ -1,7 +1,6 @@
-keras==3.12.0
-jax==0.4.34
-jaxlib==0.4.34
+tensorflow-cpu==2.12.0
+keras==2.12.0
 streamlit>=1.30.0
-numpy>=2.0.0
+numpy==1.24.3
 opencv-python-headless>=4.10.0
-Pillow>=10.0.0
+Pillow>=9.5.0
