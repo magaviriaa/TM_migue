@@ -1,19 +1,24 @@
+import os
 import streamlit as st
-import cv2
 import numpy as np
+import cv2
 from PIL import Image
-from keras.models import load_model  # ✅ Keras 3 con backend Torch
 import platform
+
+# ⚙️ Antes de importar keras, definimos el backend para evitar que busque TensorFlow
+os.environ["KERAS_BACKEND"] = "torch"
+
+import keras
+from keras.models import load_model  # ahora sí, usa Torch backend
 
 # Mostrar versión de Python
 st.write("Versión de Python:", platform.python_version())
 
-# Configurar Keras para usar Torch backend
-import keras
+# Forzar backend Torch explícitamente
 keras.backend.set_backend("torch")
 
 # Cargar el modelo entrenado
-model = load_model('keras_model.h5', compile=False)
+model = load_model("keras_model.h5", compile=False)
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
 st.title("🎶 Taylor Vision - Clasificador de Imágenes")
@@ -22,7 +27,7 @@ Convierte tu cámara en una herramienta de detección inspirada en las eras de T
 El modelo reconocerá tus poses y gestos al estilo *Fearless* o *Red* 💃
 """)
 
-image = Image.open('OIG5.jpg')
+image = Image.open("OIG5.jpg")
 st.image(image, width=350, caption="Pose Like Taylor ✨")
 
 with st.sidebar:
