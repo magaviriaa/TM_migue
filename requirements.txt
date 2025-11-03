@@ -1,6 +1,6 @@
 keras==3.12.0
-jax==0.4.30
-jaxlib==0.4.30
+jax==0.4.34
+jaxlib==0.4.34
 streamlit>=1.30.0
 numpy>=2.0.0
 opencv-python-headless>=4.10.0
